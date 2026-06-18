@@ -6,11 +6,8 @@
 <title>Playlist Records — Richard Bishop</title>
 <meta name="description" content="Richard Bishop — current and past playlist placements, song-by-song tracking, and save metrics.">
 <style>
-
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+3:ital,wght@0,300;0;400;0,600;1,300&display=swap');
-
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-
   :root{
     --black:#080808;
     --dark:#111;
@@ -25,7 +22,6 @@
     --display:'Oswald',sans-serif;
     --body:'Source Sans 3',sans-serif;
   }
-
   html{scroll-behavior:smooth;}
   body{
     background:transparent;
@@ -35,7 +31,6 @@
     line-height:1.5;
     position:relative;
   }
-
   /* PAGE-WIDE BACKGROUND — sits behind everything, entire scroll length */
   .bg-layer{
     position:absolute;
@@ -49,7 +44,6 @@
     background-repeat:no-repeat;
     z-index:-2;
   }
-
   .bg-overlay{
     position:absolute;
     top:0;
@@ -59,7 +53,6 @@
     background:linear-gradient(180deg, rgba(8,8,8,0.62) 0%, rgba(8,8,8,0.8) 30%, rgba(8,8,8,0.94) 65%, rgba(8,8,8,0.99) 100%);
     z-index:-1;
   }
-
   /* HERO HEADER — matches EPK treatment */
   .hero{
     position:relative;
@@ -73,7 +66,6 @@
     overflow:hidden;
     padding:60px 24px 50px;
   }
-
   /* LAVA / BLOOD-RED GLOW DIVIDER — reusable */
   .glow-divider{
     position:relative;
@@ -94,7 +86,6 @@
       0 0 46px 10px rgba(120,15,15,0.4);
     z-index:5;
   }
-
   .glow-divider-inline{
     margin:40px 0;
     height:2px;
@@ -103,7 +94,6 @@
       0 0 16px 3px rgba(182,35,35,0.5),
       0 0 32px 7px rgba(120,15,15,0.35);
   }
-
   /* SITE NAV — icon buttons matching email signature style */
   .site-nav{
     display:flex;
@@ -113,7 +103,6 @@
     flex-wrap:wrap;
     padding:30px 24px;
   }
-
   .nav-link{
     display:flex;
     flex-direction:column;
@@ -123,19 +112,16 @@
     color:var(--muted);
     transition:color 0.2s, transform 0.2s;
   }
-
   .nav-link:hover{
     color:var(--white);
     transform:translateY(-2px);
   }
-
   .nav-icon{
     width:38px;
     height:38px;
     object-fit:contain;
     filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));
   }
-
   .nav-label{
     font-family:var(--display);
     font-size:11px;
@@ -143,7 +129,6 @@
     letter-spacing:0.2em;
     text-transform:uppercase;
   }
-
   /* SIDEBAR CTA BUTTONS */
   .cta-stack{
     display:flex;
@@ -151,7 +136,6 @@
     gap:10px;
     margin-top:28px;
   }
-
   .cta-btn{
     display:flex;
     align-items:center;
@@ -169,33 +153,27 @@
     cursor:pointer;
     transition:all 0.2s;
   }
-
   .cta-btn-primary{
     background:var(--red-bright);
     border-color:var(--red-bright);
     color:var(--white);
   }
-
   .cta-btn-primary:hover{
     background:#d62b2b;
     box-shadow:0 0 18px rgba(182,35,35,0.5);
   }
-
   .cta-btn-secondary{
     background:rgba(255,255,255,0.03);
     color:var(--white);
   }
-
   .cta-btn-secondary:hover{
     border-color:var(--red-bright);
     color:var(--red-bright);
   }
-
   .hero-content{
     position:relative;
     z-index:2;
   }
-
   .hero-eyebrow{
     font-family:var(--display);
     font-size:12px;
@@ -205,7 +183,6 @@
     color:var(--red-bright);
     margin-bottom:24px;
   }
-
   .hero-name{
     font-family:var(--display);
     font-weight:700;
@@ -216,7 +193,6 @@
     color:var(--white);
     text-shadow:0 4px 30px rgba(0,0,0,0.7);
   }
-
   .hero-page-title{
     font-family:var(--display);
     font-weight:600;
@@ -227,7 +203,6 @@
     margin-top:18px;
     opacity:0.92;
   }
-
   .hero-tagline-img{
     display:block;
     margin:20px auto 0;
@@ -235,14 +210,12 @@
     height:auto;
     filter:drop-shadow(0 4px 16px rgba(0,0,0,0.6));
   }
-
   /* LAYOUT */
   .container{
     max-width:1500px;
     margin:0 auto;
     padding:0 24px;
   }
-
   .section-label{
     font-family:var(--display);
     font-size:13px;
@@ -255,35 +228,29 @@
     align-items:center;
     gap:20px;
   }
-
   .section-label::after{
     content:'';
     flex:1;
     height:1px;
     background:var(--border);
   }
-
   .dashboard{
     display:grid;
     grid-template-columns:300px 1fr 300px;
     gap:0;
     padding:56px 0;
   }
-
   .col{
     padding:0 32px;
   }
-
   .col-left{border-right:1px solid var(--border);}
   .col-right{border-left:1px solid var(--border);}
-
   /* LEFT COLUMN — song placement counts */
   .song-list{
     display:flex;
     flex-direction:column;
     gap:2px;
   }
-
   .song-row{
     display:flex;
     justify-content:space-between;
@@ -291,14 +258,12 @@
     padding:14px 0;
     border-bottom:1px solid var(--border);
   }
-
   .song-name{
     font-family:var(--body);
     font-size:14px;
     font-weight:600;
     color:var(--white);
   }
-
   .song-count{
     font-family:var(--display);
     font-size:14px;
@@ -307,7 +272,6 @@
     flex-shrink:0;
     margin-left:12px;
   }
-
   .song-count-label{
     font-size:10px;
     font-weight:400;
@@ -316,7 +280,6 @@
     color:var(--muted);
     margin-left:4px;
   }
-
   .total-row{
     display:flex;
     justify-content:space-between;
@@ -325,7 +288,6 @@
     margin-top:14px;
     border-top:2px solid var(--red-bright);
   }
-
   .total-label{
     font-family:var(--display);
     font-size:13px;
@@ -333,35 +295,28 @@
     text-transform:uppercase;
     color:var(--white);
   }
-
   .total-value{
     font-family:var(--display);
     font-size:28px;
     font-weight:700;
     color:var(--red-bright);
   }
-
   /* CENTER — current / past playlists */
   .playlist-block{margin-bottom:56px;}
   .playlist-block:last-child{margin-bottom:0;}
-
   .playlist-grid{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
     gap:18px;
   }
-
   .playlist-card{
     background:var(--surface);
     border:1px solid var(--border);
     padding:18px;
     transition:border-color 0.25s ease;
   }
-
   .playlist-card:hover{border-color:var(--red-bright);}
-
   .playlist-card.removed{opacity:0.55;}
-
   .playlist-art{
     width:100%;
     aspect-ratio:1/1;
@@ -374,14 +329,12 @@
     position:relative;
     overflow:hidden;
   }
-
   .playlist-art img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
   }
-
   .playlist-art-icon{
     font-family:var(--display);
     font-size:11px;
@@ -391,7 +344,6 @@
     text-align:center;
     padding:8px;
   }
-
   .playlist-platform-tag{
     position:absolute;
     top:8px;
@@ -404,7 +356,6 @@
     background:rgba(182,35,35,0.85);
     padding:3px 7px;
   }
-
   .playlist-name{
     font-family:var(--display);
     font-size:13px;
@@ -415,13 +366,11 @@
     margin-bottom:6px;
     line-height:1.25;
   }
-
   .playlist-curator{
     font-size:11px;
     color:var(--muted);
     margin-bottom:10px;
   }
-
   .playlist-meta{
     display:flex;
     justify-content:space-between;
@@ -431,29 +380,24 @@
     border-top:1px solid var(--border);
     padding-top:10px;
   }
-
   .playlist-track{
     font-weight:600;
     color:var(--red-bright);
   }
-
   .playlist-saves{
     font-family:var(--display);
     font-weight:700;
     color:var(--white);
   }
-
   .playlist-dates{
     font-size:10px;
     color:var(--muted);
     margin-top:6px;
     letter-spacing:0.02em;
   }
-
   /* RIGHT COLUMN — metrics */
   .metric-block{margin-bottom:30px;}
   .metric-block:last-child{margin-bottom:0;}
-
   .metric-label{
     font-family:var(--display);
     font-size:11px;
@@ -462,28 +406,23 @@
     color:var(--muted);
     margin-bottom:6px;
   }
-
   .metric-value{
     font-family:var(--display);
     font-size:30px;
     font-weight:700;
     color:var(--white);
   }
-
   .metric-value.accent{color:var(--red-bright);}
-
   .metric-sub{
     font-size:11px;
     color:var(--muted);
     margin-top:4px;
   }
-
   .metric-divider{
     height:1px;
     background:var(--border);
     margin:24px 0;
   }
-
   .breakdown-row{
     display:flex;
     justify-content:space-between;
@@ -492,19 +431,16 @@
     border-bottom:1px solid var(--border);
     color:var(--muted);
   }
-
   .breakdown-row span:last-child{
     color:var(--white);
     font-weight:600;
   }
-
   /* FOOTER */
   footer{
     position:relative;
     padding:64px 24px 40px;
     text-align:center;
   }
-
   .footer-fist{
     width:140px;
     height:64px;
@@ -513,7 +449,6 @@
     filter:drop-shadow(0 4px 16px rgba(182,35,35,0.35));
     opacity:0.95;
   }
-
   .footer-name{
     font-family:var(--display);
     font-weight:700;
@@ -522,7 +457,6 @@
     text-transform:uppercase;
     color:var(--white);
   }
-
   .footer-tagline{
     font-family:var(--display);
     font-size:11px;
@@ -532,7 +466,6 @@
     color:var(--red-bright);
     margin-top:10px;
   }
-
   .footer-links{
     display:flex;
     justify-content:center;
@@ -540,7 +473,6 @@
     flex-wrap:wrap;
     margin-top:26px;
   }
-
   .footer-links a{
     font-family:var(--body);
     font-size:12.5px;
@@ -549,9 +481,7 @@
     text-decoration:none;
     transition:color 0.2s;
   }
-
   .footer-links a:hover{color:var(--red-bright);}
-
   .footer-meta{
     margin-top:30px;
     font-family:var(--display);
@@ -561,9 +491,7 @@
     color:var(--muted);
     opacity:0.75;
   }
-
   footer .red{color:var(--red-bright);}
-
   /* DISCOGRAPHY — Albums / Singles sidebar blocks */
   .discog-item{
     display:flex;
@@ -572,9 +500,7 @@
     padding:12px 0;
     border-bottom:1px solid var(--border);
   }
-
   .discog-item:last-child{border-bottom:none;}
-
   .discog-art{
     width:56px;
     height:56px;
@@ -586,14 +512,12 @@
     align-items:center;
     justify-content:center;
   }
-
   .discog-art img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
   }
-
   .discog-art-icon{
     font-family:var(--display);
     font-size:8px;
@@ -603,14 +527,12 @@
     text-align:center;
     line-height:1.3;
   }
-
   .discog-info{
     display:flex;
     flex-direction:column;
     justify-content:center;
     min-width:0;
   }
-
   .discog-name{
     font-family:var(--display);
     font-size:13px;
@@ -618,16 +540,13 @@
     color:var(--white);
     line-height:1.3;
   }
-
   .discog-date{
     font-family:var(--body);
     font-size:11px;
     color:var(--muted);
     margin-top:3px;
   }
-
   .discog-date.upcoming{color:var(--red-bright);}
-
   /* RESPONSIVE */
   @media (max-width:1100px){
     .dashboard{
@@ -641,18 +560,13 @@
       margin-top:40px;
     }
   }
-
   @media (max-width:560px){
     .hero{padding:48px 16px 36px;}
     .container{padding:0 16px;}
     .dashboard{padding:40px 0;}
   }
-
-
   /* --- CORRECTIONS / ADDITIONS --- */
-
   --neon-green:#39ff6a;
-
   .hero-tagline-text{
     display:block;
     margin:22px auto 0;
@@ -664,22 +578,18 @@
     color:var(--white);
     text-shadow:0 2px 18px rgba(182,35,35,0.55), 0 1px 0 rgba(0,0,0,0.8);
   }
-
   .metric-value.green{
     color:var(--neon-green);
     text-shadow:0 0 10px rgba(57,255,106,0.45), 0 0 22px rgba(57,255,106,0.25);
   }
-
   .metric-value.red{
     color:var(--red-bright);
   }
-
   .history-block{
     margin-top:28px;
     padding-top:24px;
     border-top:1px solid var(--border);
   }
-
   .history-label{
     font-family:var(--display);
     font-size:11px;
@@ -688,20 +598,17 @@
     color:var(--muted);
     margin-bottom:8px;
   }
-
   .history-value{
     font-family:var(--display);
     font-size:26px;
     font-weight:700;
     color:var(--white);
   }
-
   .history-sub{
     font-size:11px;
     color:var(--muted);
     margin-top:4px;
   }
-
   .discog-blurb{
     font-size:11.5px;
     color:var(--muted);
@@ -709,7 +616,6 @@
     margin-top:8px;
     padding-left:68px;
   }
-
   .footer-tagline-img{
     display:block;
     margin:14px auto 0;
@@ -718,7 +624,6 @@
     filter:drop-shadow(0 3px 12px rgba(182,35,35,0.35));
     opacity:0.95;
   }
-
   .footer-copyright{
     margin-top:18px;
     font-size:11px;
@@ -728,13 +633,10 @@
     justify-content:center;
     gap:6px;
   }
-
 </style>
 <body>
-
   <div class="bg-layer"></div>
   <div class="bg-overlay"></div>
-
   <div class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">R Bishop Music</div>
@@ -743,9 +645,7 @@
       <img class="hero-tagline-img" src="https://i.imgur.com/x2qhXHu.png" alt="No bullshit. No apologies. No regrets.">
     </div>
   </div>
-
   <div class="glow-divider"></div>
-
   <nav class="site-nav">
     <a class="nav-link" href="https://nobs.rocks/hub" target="_blank" rel="noopener">
       <img class="nav-icon" src="https://i.imgur.com/yJj97eK.png" alt="The Hub">
@@ -759,7 +659,7 @@
       <img class="nav-icon" src="https://i.imgur.com/kSm4Hi4.png" alt="X">
       <span class="nav-label">X</span>
     </a>
-    <a class="nav-link" href="https://nobs.rocks/press" target="_blank" rel="noopener">
+    <a class="nav-link" href="https://richar-bishop.github.io/index/richard_bishop_epk_9.html" target="_blank" rel="noopener">
       <img class="nav-icon" src="https://i.imgur.com/MIZ3Bb5.png" alt="Press & Media">
       <span class="nav-label">Press &amp; Media</span>
     </a>
@@ -768,47 +668,37 @@
       <span class="nav-label">Contact</span>
     </a>
   </nav>
-
   <div class="container">
     <div class="dashboard">
-
       <!-- LEFT COLUMN: Song placement counts -->
       <div class="col col-left">
         <div class="section-label">By Track</div>
         <div class="song-list">
-
           <div class="song-row">
             <span class="song-name">Alone</span>
             <span class="song-count">3<span class="song-count-label">PL</span></span>
           </div>
-
           <div class="song-row">
             <span class="song-name">Still Standing</span>
             <span class="song-count">3<span class="song-count-label">PL</span></span>
           </div>
-
           <div class="song-row">
             <span class="song-name">Blood &amp; Dirt</span>
             <span class="song-count">2<span class="song-count-label">PL</span></span>
           </div>
-
           <div class="song-row">
             <span class="song-name">Nothing Left to Lose</span>
             <span class="song-count">2<span class="song-count-label">PL</span></span>
           </div>
-
           <div class="song-row">
             <span class="song-name">Daddy's Girl</span>
             <span class="song-count">1<span class="song-count-label">PL</span></span>
           </div>
-
         </div>
-
         <div class="total-row">
           <span class="total-label">All-Time Placements</span>
           <span class="total-value">12</span>
         </div>
-
         <div class="cta-stack">
           <a class="cta-btn cta-btn-primary" href="https://nobs.rocks/gumroad" target="_blank" rel="noopener">Buy Still Standing</a>
           <a class="cta-btn cta-btn-secondary" href="https://nobs.rocks/youtube" target="_blank" rel="noopener">Subscribe on YouTube</a>
@@ -824,14 +714,11 @@
           ">Share</button>
         </div>
       </div>
-
       <!-- CENTER COLUMN: current and past playlists -->
       <div class="col col-center">
-
         <div class="playlist-block">
           <div class="section-label">Current Playlists</div>
           <div class="playlist-grid">
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/zzZl2XV.jpg" alt="AAA Pass Pop Punk Semi Final cover art">
@@ -845,7 +732,6 @@
               </div>
               <div class="playlist-dates">Added Jun 18, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/A9fXwNU.jpg" alt="NextHitRadio cover art">
@@ -859,7 +745,6 @@
               </div>
               <div class="playlist-dates">Added Jun 18, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/lhgFucJ.jpg" alt="AAA Pass Pop Punk and Junk cover art">
@@ -873,7 +758,6 @@
               </div>
               <div class="playlist-dates">Added Jun 18, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/Yk0p1xM.jpg" alt="Upcoming Artists of 2026! cover art">
@@ -887,7 +771,6 @@
               </div>
               <div class="playlist-dates">Added Jun 14, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/Ezo5pf4.jpg" alt="AI-Pocalypse Best of AI Rock cover art">
@@ -901,7 +784,6 @@
               </div>
               <div class="playlist-dates">Added Jun 13, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/sRXldEH.jpg" alt="Rock in Rotation cover art">
@@ -915,7 +797,6 @@
               </div>
               <div class="playlist-dates">Added Jun 10, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/syABtSY.jpg" alt="Hard Rock Essential cover art">
@@ -929,7 +810,6 @@
               </div>
               <div class="playlist-dates">Added Jun 8, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/mmipLjp.jpg" alt="X-Rated Grunge Hard Rock 90s cover art">
@@ -943,7 +823,6 @@
               </div>
               <div class="playlist-dates">Added Jun 8, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/UDrAv7W.jpg" alt="Seattle Grunge Calling cover art">
@@ -957,7 +836,6 @@
               </div>
               <div class="playlist-dates">Added Jun 8, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/NIpvtUV.jpg" alt="Rock Hot List cover art">
@@ -971,7 +849,6 @@
               </div>
               <div class="playlist-dates">Added Jun 5, 2026</div>
             </div>
-
             <div class="playlist-card">
               <div class="playlist-art">
                 <img src="https://i.imgur.com/fvNTPaw.jpg" alt="GG AYPE Modern Rock 2026 cover art">
@@ -985,16 +862,12 @@
               </div>
               <div class="playlist-dates">Added May 1, 2026</div>
             </div>
-
           </div>
         </div>
-
         <div class="glow-divider glow-divider-inline"></div>
-
         <div class="playlist-block">
           <div class="section-label">Past Playlists</div>
           <div class="playlist-grid">
-
             <div class="playlist-card removed">
               <div class="playlist-art">
                 <div class="playlist-art-icon">Art pending<br>Saturday Night Pulse</div>
@@ -1008,38 +881,29 @@
               </div>
               <div class="playlist-dates">Added Apr 14, 2026 — No longer active</div>
             </div>
-
           </div>
         </div>
-
       </div>
-
       <!-- RIGHT COLUMN: metrics -->
       <div class="col col-right">
         <div class="section-label">Metrics</div>
-
         <div class="metric-block">
           <div class="metric-label">Total Saves / Subscribers — Active</div>
           <div class="metric-value green">5,898</div>
           <div class="metric-sub">Across 11 confirmed live placements</div>
         </div>
-
         <div class="metric-block">
           <div class="metric-label">Active Placements</div>
           <div class="metric-value">11</div>
           <div class="metric-sub">10 Spotify, 1 YouTube</div>
         </div>
-
         <div class="metric-block">
           <div class="metric-label">Curators / Sources</div>
           <div class="metric-value">8</div>
           <div class="metric-sub">EGM Playlists, Shanie T, Underground Si Muove, Zampi_Music_Promo, James Osswald, GG AYPE, Mark Hughes, Danilo Cangemi</div>
         </div>
-
         <div class="metric-divider"></div>
-
         <div class="section-label" style="margin-bottom:14px;">Saves By Playlist</div>
-
         <div class="breakdown-row"><span>NextHitRadio</span><span>1,229</span></div>
         <div class="breakdown-row"><span>Rock Hot List</span><span>1,655</span></div>
         <div class="breakdown-row"><span>Rock in Rotation</span><span>870</span></div>
@@ -1051,19 +915,14 @@
         <div class="breakdown-row"><span>AI-Pocalypse</span><span>74</span></div>
         <div class="breakdown-row"><span>AAA Pass - Pop Punk &amp; Junk</span><span>73</span></div>
         <div class="breakdown-row"><span>GG AYPE: The Vault (YT)</span><span>89</span></div>
-
         <div class="metric-divider"></div>
-
         <div class="metric-block">
           <div class="metric-label">Groover Campaign 1 Result</div>
           <div class="metric-value">2 / 13</div>
           <div class="metric-sub">2 placements, 1 magazine feature</div>
         </div>
-
         <div class="metric-divider"></div>
-
         <div class="section-label" style="margin-bottom:14px;">Albums</div>
-
         <div class="discog-item">
           <div class="discog-art">
             <img src="https://i.imgur.com/o740STE.png" alt="Still Standing album cover">
@@ -1074,11 +933,8 @@
           </div>
         </div>
         <div class="discog-blurb">No label. No backing. Eleven tracks built from scratch by a single father who refused to quit. Drop-C, baritone, no apologies.</div>
-
         <div class="metric-divider"></div>
-
         <div class="section-label" style="margin-bottom:14px;">Singles</div>
-
         <div class="discog-item">
           <div class="discog-art">
             <div class="discog-art-icon">Cover<br>Pending</div>
@@ -1088,31 +944,23 @@
             <div class="discog-date upcoming">Releases Jul 3, 2026</div>
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
-
   <div class="glow-divider"></div>
-
   <footer>
     <img class="footer-fist" src="https://i.imgur.com/Z7dnWfU.png" alt="R Bishop Music fist logo">
     <div class="footer-name">R Bishop Music</div>
     <img class="footer-tagline-img" src="https://i.imgur.com/x2qhXHu.png" alt="No bullshit. No apologies. No regrets.">
-
     <div class="footer-links">
       <a href="https://nobs.rocks/hub" target="_blank" rel="noopener">The Hub</a>
       <a href="https://nobs.rocks/spotify" target="_blank" rel="noopener">Spotify</a>
       <a href="https://nobs.rocks/X" target="_blank" rel="noopener">X</a>
-      <a href="https://nobs.rocks/press" target="_blank" rel="noopener">Press &amp; Media</a>
+      <a href="https://richar-bishop.github.io/index/richard_bishop_epk_9.html" target="_blank" rel="noopener">Press &amp; Media</a>
       <a href="mailto:rbishop_fans@proton.me">Contact</a>
     </div>
-
     <div class="footer-copyright">&copy; R Bishop Music</div>
-
     <div class="footer-meta">Last Updated June 18, 2026</div>
   </footer>
-
 </body>
 </html>
