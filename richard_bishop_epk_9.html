@@ -1,201 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Richard Bishop — Independent Hard Rock Artist & U.S. Veteran | Still Standing Album | Press Kit">
-    <title>Richard Bishop — Press & Media</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard Bishop — Press & Media</title>
+<meta name="description" content="Richard Bishop — Independent Hard Rock Artist & U.S. Veteran | Still Standing Album | Press Kit">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --black:#080808;
+    --dark:#111;
+    --surface:rgba(22,22,22,0.88);
+    --border:#262626;
+    --red:#6b1010;
+    --red-bright:#B62323;
+    --white:#ede9e0;
+    --muted:#666660;
+    --display:'Oswald',sans-serif;
+    --body:'Source Sans 3',sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:transparent;
+    color:var(--white);
+    font-family:var(--body);
+    font-size:15px;
+    line-height:1.6;
+    position:relative;
+  }
+  .bg-layer{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-image:url("https://i.imgur.com/gS7s3FZ.jpeg");
+    background-size:cover;
+    background-position:center 30%;
+    background-repeat:no-repeat;
+    z-index:-2;
+  }
+  .bg-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(180deg, rgba(8,8,8,0.62) 0%, rgba(8,8,8,0.8) 30%, rgba(8,8,8,0.94) 65%, rgba(8,8,8,0.99) 100%);
+    z-index:-1;
+  }
+  .hero{
+    position:relative;
+    width:100%;
+    min-height:46vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    padding:60px 24px 50px;
+  }
+  .glow-divider{
+    position:relative;
+    width:100%;
+    height:3px;
+    background:linear-gradient(90deg, transparent 0%, rgba(182,35,35,0.15) 10%, rgba(214,60,30,0.85) 35%, rgba(255,120,40,0.95) 50%, rgba(214,60,30,0.85) 65%, rgba(182,35,35,0.15) 90%, transparent 100%);
+    box-shadow:0 0 8px 1px rgba(255,90,30,0.65), 0 0 22px 4px rgba(182,35,35,0.55), 0 0 46px 10px rgba(120,15,15,0.4);
+    z-index:5;
+    margin:50px 0;
+  }
+  .site-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:36px;
+    flex-wrap:wrap;
+    padding:30px 24px;
+  }
+  .nav-link{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:var(--muted);
+    transition:color 0.2s, transform 0.2s;
+  }
+  .nav-link:hover{
+    color:var(--white);
+    transform:translateY(-2px);
+  }
+  .nav-icon{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+    filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  }
+  .nav-label{
+    font-family:var(--display);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+  }
+  .container{
+    max-width:1500px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .section-label{
+    font-family:var(--display);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.4em;
+    text-transform:uppercase;
+    color:var(--red-bright);
+    margin-bottom:60px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+  .section-label::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:var(--border);
+  }
+  .bio-grid{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:40px;
+    align-items:start;
+  }
+  .discog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+  }
+  .discog-item{
+    background:transparent;
+    border:1px solid var(--border);
+    padding:24px;
+  }
+  .social-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:35px;
+    text-align:center;
+  }
 
-        :root {
-            --black: #080808;
-            --dark: #111;
-            --surface: rgba(22,22,22,0.88);
-            --border: #262626;
-            --red: #6b1010;
-            --red-bright: #B62323;
-            --white: #ede9e0;
-            --muted: #666660;
-            --display: 'Oswald', sans-serif;
-            --body: 'Source Sans 3', sans-serif;
-        }
+  .accolades-carousel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: rgba(17,17,17,0.7);
+  }
+  .carousel-container {
+    display: flex;
+    gap: 18px;
+    padding: 25px 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel-container::-webkit-scrollbar { display: none; }
+  .accolade-img {
+    width: 340px;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .accolade-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(182,35,35,0.4);
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(182,35,35,0.9);
+    color: white;
+    border: none;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+  }
+  .prev-btn { left: 15px; }
+  .next-btn { right: 15px; }
+  .carousel-btn:hover { background: var(--red-bright); }
 
-        * { box-sizing: border-box; margin:0; padding:0; }
-        body {
-            background: var(--black);
-            color: var(--white);
-            font-family: var(--body);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(8,8,8,0.7), rgba(8,8,8,0.92)), url('https://i.imgur.com/gS7s3FZ.jpeg') center/cover no-repeat;
-        }
-
-        .hero-content h1 {
-            font-family: var(--display);
-            font-size: clamp(3.5rem, 10vw, 7rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.7);
-        }
-
-        .hero-content .subtitle {
-            font-family: var(--display);
-            font-size: 1.35rem;
-            letter-spacing: 0.2em;
-            color: var(--red-bright);
-            margin-top: 10px;
-        }
-
-        .hero-tagline-img {
-            margin-top: 40px;
-            max-width: 460px;
-            filter: drop-shadow(0 4px 16px rgba(182,35,35,0.4));
-        }
-
-        .section {
-            padding: 80px 24px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: var(--display);
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--red-bright);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .bio-grid {
-            display: grid;
-            grid-template-columns: 1fr 420px;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .bio-text {
-            font-size: 1.15rem;
-        }
-
-        .discog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .discog-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 24px;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            text-align: center;
-        }
-
-        .contact {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 50px 40px;
-            text-align: center;
-        }
-
-        .contact a {
-            color: var(--red-bright);
-            font-size: 1.6rem;
-            text-decoration: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 24px 40px;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 900px) {
-            .bio-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.97);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .lightbox-content {
+    position: relative;
+  }
+  .lightbox img {
+    max-width: 92%;
+    max-height: 92vh;
+    border: 3px solid var(--red-bright);
+  }
+  .close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--red-bright);
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(182,35,35,0.8);
+    z-index: 10;
+    transition: all 0.2s;
+  }
+  .close-btn:hover {
+    background: #ff4444;
+    transform: scale(1.1);
+  }
+  .contact{
+    background:transparent;
+    border:1px solid var(--border);
+    padding:50px 40px;
+    text-align:center;
+  }
+  footer{
+    position:relative;
+    padding:80px 24px 40px;
+    text-align:center;
+  }
+  .footer-fist{
+    width:140px;
+    height:64px;
+    object-fit:contain;
+    margin:0 auto 22px;
+    filter:drop-shadow(0 4px 16px rgba(182,35,35,0.35));
+    opacity:0.95;
+  }
+  .footer-name{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.3rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--white);
+  }
+  .footer-tagline-img{
+    display:block;
+    margin:14px auto 0;
+    width:min(380px, 78vw);
+    height:auto;
+    filter:drop-shadow(0 3px 12px rgba(182,35,35,0.35));
+    opacity:0.95;
+  }
+  .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top:26px;
+  }
+  .footer-links a{
+    font-family:var(--body);
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:var(--muted);
+    text-decoration:none;
+    transition:color 0.2s;
+  }
+  .footer-links a:hover{color:var(--red-bright);}
+  .footer-meta{
+    margin-top:30px;
+    font-family:var(--display);
+    font-size:10.5px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    opacity:0.75;
+  }
+</style>
 <body>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Richard Bishop</h1>
-            <div class="subtitle">Hard Rock Artist • U.S. Veteran</div>
-            <img class="hero-tagline-img" src="https://i.imgur.com/x2qhXHu.png" alt="No bullshit. No apologies. No regrets.">
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">R Bishop Music</div>
+      <h1 class="hero-name">Richard Bishop</h1>
+      <div class="hero-page-title">Press & Media</div>
+      <img class="hero-tagline-img" src="https://i.imgur.com/x2qhXHu.png" alt="No bullshit. No apologies. No regrets.">
+    </div>
+  </div>
+  <div class="glow-divider"></div>
+  <nav class="site-nav">
+    <a class="nav-link" href="https://nobs.rocks/hub" target="_blank" rel="noopener">
+      <img class="nav-icon" src="https://i.imgur.com/yJj97eK.png" alt="The Hub">
+      <span class="nav-label">The Hub</span>
+    </a>
+    <a class="nav-link" href="https://nobs.rocks/spotify" target="_blank" rel="noopener">
+      <img class="nav-icon" src="https://i.imgur.com/YIFci5h.png" alt="Spotify">
+      <span class="nav-label">Spotify</span>
+    </a>
+    <a class="nav-link" href="https://nobs.rocks/X" target="_blank" rel="noopener">
+      <img class="nav-icon" src="https://i.imgur.com/kSm4Hi4.png" alt="X">
+      <span class="nav-label">X</span>
+    </a>
+    <a class="nav-link" href="https://richar-bishop.github.io/index/richard_bishop_epk_9.html" target="_blank" rel="noopener">
+      <img class="nav-icon" src="https://i.imgur.com/MIZ3Bb5.png" alt="Press & Media">
+      <span class="nav-label">Press &amp; Media</span>
+    </a>
+    <a class="nav-link" href="mailto:rbishop_fans@proton.me">
+      <img class="nav-icon" src="https://i.imgur.com/VQ7tUJX.png" alt="Contact">
+      <span class="nav-label">Contact</span>
+    </a>
+  </nav>
+  <div class="container">
+    <div class="section">
+      <div class="section-label">Artist Bio</div>
+      <div class="bio-grid">
+        <div>
+          <p style="font-size:1.15rem;">Richard Bishop doesn't fit neatly into a category, and he's not trying to. He's a combat veteran, a single father, and an independent hard rock artist from Fairfield, Iowa, and every one of those things shows up in his music whether he intends it to or not.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">His sound is built in Drop-C tuning, rooted in B minor, driven by a deep baritone chest voice that doesn't reach for high notes because it doesn't need to. Post-grunge grit, blues-rock backbone, heavy distorted guitar, dynamic verses that open into hard-hitting choruses. It's the kind of music that feels lived in because it is.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">Richard writes every lyric himself. Every creative decision is his. He uses Suno Pro with a custom-trained voice model for production, and he's transparent about that, because the tools don't change what the work costs. Some of these songs took a long time to be ready to write. That's not a selling point. That's just the truth.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">His debut album Still Standing dropped May 16, 2026 on all major streaming platforms through Ditto Pro. Eleven tracks. No label. No manager. No budget. Just a story that needed to be told and the stubbornness to see it through. The album was written for the people who've actually lived something, veterans still carrying what they brought home, working people who keep getting the short end, single parents holding it together on no sleep and no help.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">It's not a record about being fine. It's a record about still being here anyway.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">Richard owns 100% of his masters and copyrights, is registered with ASCAP and SoundExchange, and distributes through Ditto Pro. He is building this career on his own terms, no shortcuts, no apologies, no one else's timeline.</p>
+          <p style="margin-top:25px;font-size:1.15rem;">No bullshit. No regrets. No apologies.</p>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="section-label">About Richard Bishop</div>
-        <div class="bio-grid">
-            <div class="bio-text">
-                <p>Richard Bishop is an independent hard rock / blues-rock artist and U.S. military veteran from Fairfield, Iowa. His music channels the invisible wounds of service, generational values, loss, resilience, and the everyday fight to keep standing.</p>
-                <p style="margin-top:25px">No label. No backing. Eleven tracks built from scratch by a single father who refused to quit. Drop-C, baritone, no apologies.</p>
+        <img src="https://i.imgur.com/rutwQ6h.jpg" alt="Richard Bishop" style="width:100%;border:1px solid var(--border);box-shadow:0 0 20px rgba(182,35,35,0.3);">
+      </div>
+    </div>
+    <div class="glow-divider"></div>
+    <div class="section">
+      <div class="section-label">Discography</div>
+      <div class="discog-grid">
+        <div class="discog-item" style="max-width:580px;">
+          <div style="display:flex;gap:20px;align-items:center;">
+            <img src="https://i.imgur.com/o740STE.png" alt="Still Standing" style="width:42%;border:1px solid var(--border);flex-shrink:0;">
+            <div style="flex:1;font-size:18px;">
+              <strong>Still Standing</strong><br>
+              Full Album • May 16, 2026<br>
+              Independent Release • 11 Tracks
             </div>
-            <img src="https://i.imgur.com/o740STE.png" alt="Still Standing" style="width:100%; border:1px solid var(--border); box-shadow:0 0 20px rgba(182,35,35,0.3);">
+          </div>
+          <div style="margin-top:25px;font-size:1.05rem;">
+            Still Standing is the debut album from Richard Bishop, eleven tracks of post-grunge hard rock and blues-rock built in Drop-C tuning, B minor, with a deep baritone vocal that doesn't flinch and doesn't soften. Written entirely by hand, produced independently with no label and no manager, and recorded with AI-assisted production via Suno Pro with a custom-trained voice model, this record is not about being fine, it's about still being here anyway.
+          </div>
         </div>
-    </section>
-
-    <section class="section" style="background:var(--dark);">
-        <div class="section-label">Discography</div>
-        <div class="discog-grid">
-            <div class="discog-item">
-                <strong>Still Standing</strong><br>
-                Full Album • May 16, 2026<br>
-                Independent Release • 11 Tracks
+        <div class="discog-item">
+          <div style="display:flex;gap:20px;align-items:center;">
+            <img src="YOUR_CARRY_THEM_HOME_COVER_URL_HERE" alt="Carry Them Home" style="width:42%;border:1px solid var(--border);flex-shrink:0;">
+            <div style="flex:1;font-size:16px;">
+              <strong>Carry Them Home</strong><br>
+              Single • July 3, 2026<br>
+              Upcoming
             </div>
-            <div class="discog-item">
-                <strong>Carry Them Home</strong><br>
-                Single • July 3, 2026<br>
-                Upcoming
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="glow-divider"></div>
+    <div class="section">
+      <div class="section-label">Social & Links</div>
+      <div class="social-grid">
+        <a href="https://nobs.rocks/hub" target="_blank" rel="noopener" style="display:block;text-align:center;">
+          <img src="https://i.imgur.com/yJj97eK.png" alt="The Hub" style="width:50px;height:50px;object-fit:contain;">
+        </a>
+        <a href="https://nobs.rocks/still-standing-album" target="_blank" rel="noopener" style="display:block;text-align:center;">
+          <img src="https://i.imgur.com/YIFci5h.png" alt="Spotify" style="width:50px;height:50px;object-fit:contain;">
+        </a>
+        <a href="https://nobs.rocks/youtube" target="_blank" rel="noopener" style="display:block;text-align:center;">
+          <img src="https://i.imgur.com/mvaE8WM.png" alt="YouTube" style="width:50px;height:50px;object-fit:contain;">
+        </a>
+        <a href="https://nobs.rocks/playlist-records" target="_blank" rel="noopener" style="display:block;text-align:center;">
+          <img src="https://i.imgur.com/t386EFk.png" alt="Music" style="width:50px;height:50px;object-fit:contain;">
+        </a>
+        <a href="https://nobs.rocks/genius" target="_blank" rel="noopener" style="display:block;text-align:center;">
+          <img src="https://i.imgur.com/drMp6Tg.png" alt="Genius" style="width:50px;height:50px;object-fit:contain;">
+        </a>
+      </div>
+    </div>
+    <div class="glow-divider"></div>
+    <div class="section">
+      <div class="section-label">Accolades & Endorsements</div>
+      <div class="accolades-carousel">
+        <button class="carousel-btn prev-btn" onclick="scrollCarousel(-1)">‹</button>
+        <div class="carousel-container" id="carouselContainer"></div>
+        <button class="carousel-btn next-btn" onclick="scrollCarousel(1)">›</button>
+      </div>
+    </div>
+    <div class="glow-divider"></div>
+    <div class="section">
+      <div class="section-label">Press & Media Contact</div>
+      <div class="contact">
+        <a href="mailto:rbishop_press@proton.me" style="color:var(--red-bright);font-size:1.8rem;text-decoration:none;">
+          <img class="nav-icon" src="https://i.imgur.com/MIZ3Bb5.png" alt="Press & Media" style="width:48px;height:48px;vertical-align:middle;margin-right:12px;">
+          Press Inquiries
+        </a>
+        <p style="margin-top:20px;font-size:1.05rem;">For press, media features, radio, sync licensing, playlist pitching, interviews, and promotional opportunities. Professional inquiries only.</p>
+      </div>
+    </div>
+  </div>
+  <div class="glow-divider"></div>
+  <footer>
+    <img class="footer-fist" src="https://i.imgur.com/Z7dnWfU.png" alt="R Bishop Music fist logo">
+    <div class="footer-name">R Bishop Music</div>
+    <img class="footer-tagline-img" src="https://i.imgur.com/x2qhXHu.png" alt="No bullshit. No apologies. No regrets.">
+    <div class="footer-links">
+      <a href="https://nobs.rocks/hub" target="_blank" rel="noopener">The Hub</a>
+      <a href="https://nobs.rocks/spotify" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://nobs.rocks/X" target="_blank" rel="noopener">X</a>
+      <a href="https://richar-bishop.github.io/index/richard_bishop_epk_9.html" target="_blank" rel="noopener">Press &amp; Media</a>
+      <a href="mailto:rbishop_fans@proton.me">Contact</a>
+    </div>
+    <div class="footer-copyright">&copy; R Bishop Music</div>
+    <div class="footer-meta">Last Updated June 18, 2026</div>
+  </footer>
 
-    <section class="section">
-        <div class="section-label">Social & Links</div>
-        <div class="social-grid">
-            <div><strong>Instagram</strong><br>@richard_bishop_artist</div>
-            <div><strong>Facebook</strong><br>Richard Bishop Artist</div>
-            <div><strong>YouTube</strong><br>@RichardBishopArtist</div>
-            <div><strong>Bluesky</strong><br>@richard-bishop.bsky.social</div>
-            <div><strong>TikTok</strong><br>@Richard_Bishop_Artist</div>
-            <div><strong>The Hub</strong><br><a href="https://nobs.rocks/hub" target="_blank" style="color:var(--red-bright);">nobs.rocks/hub</a></div>
-        </div>
-    </section>
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this) closeLightbox()">
+    <div class="lightbox-content">
+      <button class="close-btn" onclick="closeLightbox()">×</button>
+      <img id="lightboxImg" src="" alt="">
+    </div>
+  </div>
 
-    <section class="section">
-        <div class="section-label">Press & Media Contact</div>
-        <div class="contact">
-            <p>For press, media, sync, radio & playlist inquiries</p>
-            <a href="mailto:rbishop_press@proton.me">rbishop_press@proton.me</a>
-            <p style="margin-top:25px; font-size:0.95rem;">Response within 48 hours • Fairfield, Iowa</p>
-        </div>
-    </section>
+  <script>
+    const images = [
+      "https://i.imgur.com/d4f5g1V.jpg",
+      "https://i.imgur.com/c3Xahsk.jpg",
+      "https://i.imgur.com/8nXqdBo.jpg",
+      "https://i.imgur.com/IvJu8YC.jpg",
+      "https://i.imgur.com/OoaB08L.jpg",
+      "https://i.imgur.com/IFx1GDc.jpg",
+      "https://i.imgur.com/CymXThE.jpg",
+      "https://i.imgur.com/r5D2UiE.jpg",
+      "https://i.imgur.com/6uWnO9N.jpg",
+      "https://i.imgur.com/NE6iQhI.jpg"
+    ];
 
-    <footer>
-        © R Bishop Music • Fairfield, Iowa • All Rights Reserved
-    </footer>
+    function renderGallery() {
+      const container = document.getElementById('carouselContainer');
+      container.innerHTML = '';
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Accolade";
+        img.className = "accolade-img";
+        img.onclick = () => showLightbox(src);
+        container.appendChild(img);
+      });
+    }
 
+    function scrollCarousel(direction) {
+      const container = document.getElementById('carouselContainer');
+      const scrollAmount = 360;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      let newScroll = container.scrollLeft + (direction * scrollAmount);
+
+      if (newScroll > maxScroll + 10) {
+        newScroll = 0;
+      } else if (newScroll < -10) {
+        newScroll = maxScroll;
+      }
+
+      container.scrollTo({ left: newScroll, behavior: 'smooth' });
+    }
+
+    function showLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    window.onload = renderGallery;
+  </script>
 </body>
 </html>
